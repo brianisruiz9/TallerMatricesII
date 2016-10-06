@@ -146,10 +146,20 @@ public class Principal extends javax.swing.JFrame {
 
         txtNoColumnas.setBackground(new java.awt.Color(204, 255, 255));
         txtNoColumnas.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        txtNoColumnas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNoColumnasKeyTyped(evt);
+            }
+        });
         jPanel3.add(txtNoColumnas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 40, -1));
 
         txtNoFilas.setBackground(new java.awt.Color(204, 255, 255));
         txtNoFilas.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        txtNoFilas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNoFilasKeyTyped(evt);
+            }
+        });
         jPanel3.add(txtNoFilas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 40, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 360, 70));
@@ -459,6 +469,22 @@ public class Principal extends javax.swing.JFrame {
         Helper.habilitarBotones(botonesH);
         Helper.deshabilitarBotones(botonesD);
     }//GEN-LAST:event_cmdLimpiarActionPerformed
+
+    private void txtNoFilasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoFilasKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNoFilasKeyTyped
+
+    private void txtNoColumnasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoColumnasKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNoColumnasKeyTyped
 
     /**
      * @param args the command line arguments
